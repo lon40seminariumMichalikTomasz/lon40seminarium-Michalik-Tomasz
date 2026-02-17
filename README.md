@@ -1,2 +1,2 @@
-# lon40seminarium-Michalik-Tomasz
+# lon40seminarium-michalik-tomasz.github.io
 Koścół
