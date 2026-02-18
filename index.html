@@ -5,140 +5,165 @@
 <title>Elementy elektroniczne</title>
 
 <style>
-body { font-family: Arial, sans-serif; margin: 40px; }
+body { font-family: Arial; margin: 40px; }
+
 li { margin-bottom: 25px; }
 img { display: block; margin-top: 10px; max-width: 200px; }
+
 a { font-weight: bold; text-decoration: none; color: black; }
 a:hover { color: blue; }
 
+#lista { display: block; }
+
 .opis {
-    margin-top: 80px;
-    padding: 20px;
+    display: none;
     border-top: 2px solid #ccc;
+    padding-top: 20px;
 }
 
 .powrot {
+    margin-top: 20px;
     display: inline-block;
-    margin-top: 15px;
     padding: 8px 14px;
     background: #eee;
     border-radius: 5px;
+    cursor: pointer;
 }
 </style>
-</head>
 
+<script>
+function pokaz(id) {
+    document.getElementById("lista").style.display = "none";
+
+    let opisy = document.querySelectorAll(".opis");
+    opisy.forEach(o => o.style.display = "none");
+
+    document.getElementById(id).style.display = "block";
+}
+
+function powrot() {
+    document.getElementById("lista").style.display = "block";
+
+    let opisy = document.querySelectorAll(".opis");
+    opisy.forEach(o => o.style.display = "none");
+}
+</script>
+
+</head>
 <body>
 
-<h1 id="top">Lista elementów elektronicznych</h1>
+<h1>Lista elementów elektronicznych</h1>
 
+<div id="lista">
 <ol>
-<li><a href="#rez">Rezystor</a><img src="images/1.png"></li>
-<li><a href="#kon">Kondensator</a><img src="images/2.png"></li>
-<li><a href="#led">Dioda LED</a><img src="images/3.png"></li>
-<li><a href="#seg">Wyświetlacz siedmiosegmentowy</a><img src="images/4.png"></li>
-<li><a href="#klaw">Klawiatura 4x4</a><img src="images/5.png"></li>
-<li><a href="#mikro">Mikroswitch</a><img src="images/6.png"></li>
-<li><a href="#foto">Fotorezystor</a><img src="images/7.png"></li>
-<li><a href="#przek">Przekaźnik</a><img src="images/8.png"></li>
-<li><a href="#sil">Silnik krokowy</a><img src="images/9.png"></li>
-<li><a href="#servo">Servo SG-90</a><img src="images/10.png"></li>
-<li><a href="#pot">Potencjometr</a><img src="images/11.png"></li>
-<li><a href="#enk">Enkoder inkrementalny</a><img src="images/12.png"></li>
-<li><a href="#ultra">Czujnik ultradźwiękowy</a><img src="images/13.png"></li>
-<li><a href="#kont">Kontaktron</a><img src="images/14.png"></li>
-<li><a href="#lcd">Wyświetlacz LCD</a><img src="images/15.png"></li>
+<li><a onclick="pokaz('rez')">Rezystor</a><img src="images/1.png"></li>
+<li><a onclick="pokaz('kon')">Kondensator</a><img src="images/2.png"></li>
+<li><a onclick="pokaz('led')">Dioda LED</a><img src="images/3.png"></li>
+<li><a onclick="pokaz('seg')">Wyświetlacz siedmiosegmentowy</a><img src="images/4.png"></li>
+<li><a onclick="pokaz('klaw')">Klawiatura 4x4</a><img src="images/5.png"></li>
+<li><a onclick="pokaz('mikro')">Mikroswitch</a><img src="images/6.png"></li>
+<li><a onclick="pokaz('foto')">Fotorezystor</a><img src="images/7.png"></li>
+<li><a onclick="pokaz('przek')">Przekaźnik</a><img src="images/8.png"></li>
+<li><a onclick="pokaz('sil')">Silnik krokowy</a><img src="images/9.png"></li>
+<li><a onclick="pokaz('servo')">Servo SG-90</a><img src="images/10.png"></li>
+<li><a onclick="pokaz('pot')">Potencjometr</a><img src="images/11.png"></li>
+<li><a onclick="pokaz('enk')">Enkoder inkrementalny</a><img src="images/12.png"></li>
+<li><a onclick="pokaz('ultra')">Czujnik ultradźwiękowy</a><img src="images/13.png"></li>
+<li><a onclick="pokaz('kont')">Kontaktron</a><img src="images/14.png"></li>
+<li><a onclick="pokaz('lcd')">Wyświetlacz LCD</a><img src="images/15.png"></li>
 </ol>
+</div>
 
 <!-- OPISY -->
 
-<div class="opis" id="rez">
+<div id="rez" class="opis">
 <h2>Rezystor</h2>
 <p>Rezystor ogranicza przepływ prądu w obwodzie elektrycznym.</p>
-<a href="#top" class="powrot">⬅ Powrót do listy</a>
+<div class="powrot" onclick="powrot()">⬅ Powrót</div>
 </div>
 
-<div class="opis" id="kon">
+<div id="kon" class="opis">
 <h2>Kondensator</h2>
-<p>Kondensator magazynuje energię elektryczną w polu elektrycznym.</p>
-<a href="#top" class="powrot">⬅ Powrót do listy</a>
+<p>Kondensator magazynuje energię elektryczną.</p>
+<div class="powrot" onclick="powrot()">⬅ Powrót</div>
 </div>
 
-<div class="opis" id="led">
+<div id="led" class="opis">
 <h2>Dioda LED</h2>
-<p>Dioda LED emituje światło podczas przepływu prądu.</p>
-<a href="#top" class="powrot">⬅ Powrót do listy</a>
+<p>Dioda LED świeci podczas przepływu prądu.</p>
+<div class="powrot" onclick="powrot()">⬅ Powrót</div>
 </div>
 
-<div class="opis" id="seg">
+<div id="seg" class="opis">
 <h2>Wyświetlacz siedmiosegmentowy</h2>
-<p>Służy do wyświetlania cyfr za pomocą siedmiu segmentów LED.</p>
-<a href="#top" class="powrot">⬅ Powrót do listy</a>
+<p>Służy do wyświetlania cyfr.</p>
+<div class="powrot" onclick="powrot()">⬅ Powrót</div>
 </div>
 
-<div class="opis" id="klaw">
+<div id="klaw" class="opis">
 <h2>Klawiatura 4x4</h2>
-<p>Pozwala na wprowadzanie danych poprzez zestaw przycisków.</p>
-<a href="#top" class="powrot">⬅ Powrót do listy</a>
+<p>Pozwala wprowadzać dane przyciskami.</p>
+<div class="powrot" onclick="powrot()">⬅ Powrót</div>
 </div>
 
-<div class="opis" id="mikro">
+<div id="mikro" class="opis">
 <h2>Mikroswitch</h2>
-<p>Mikroswitch to mały przełącznik aktywowany naciśnięciem.</p>
-<a href="#top" class="powrot">⬅ Powrót do listy</a>
+<p>Mały przełącznik reagujący na naciśnięcie.</p>
+<div class="powrot" onclick="powrot()">⬅ Powrót</div>
 </div>
 
-<div class="opis" id="foto">
+<div id="foto" class="opis">
 <h2>Fotorezystor</h2>
-<p>Fotorezystor zmienia opór w zależności od natężenia światła.</p>
-<a href="#top" class="powrot">⬅ Powrót do listy</a>
+<p>Zmienia opór zależnie od światła.</p>
+<div class="powrot" onclick="powrot()">⬅ Powrót</div>
 </div>
 
-<div class="opis" id="przek">
+<div id="przek" class="opis">
 <h2>Przekaźnik</h2>
-<p>Przekaźnik umożliwia sterowanie obwodem za pomocą sygnału elektrycznego.</p>
-<a href="#top" class="powrot">⬅ Powrót do listy</a>
+<p>Służy do sterowania obwodem.</p>
+<div class="powrot" onclick="powrot()">⬅ Powrót</div>
 </div>
 
-<div class="opis" id="sil">
+<div id="sil" class="opis">
 <h2>Silnik krokowy</h2>
-<p>Silnik krokowy obraca się o dokładnie określone kąty.</p>
-<a href="#top" class="powrot">⬅ Powrót do listy</a>
+<p>Obraca się o określone kąty.</p>
+<div class="powrot" onclick="powrot()">⬅ Powrót</div>
 </div>
 
-<div class="opis" id="servo">
+<div id="servo" class="opis">
 <h2>Servo SG-90</h2>
-<p>Serwomechanizm umożliwia precyzyjne ustawianie kąta obrotu.</p>
-<a href="#top" class="powrot">⬅ Powrót do listy</a>
+<p>Umożliwia precyzyjne ustawienie kąta.</p>
+<div class="powrot" onclick="powrot()">⬅ Powrót</div>
 </div>
 
-<div class="opis" id="pot">
+<div id="pot" class="opis">
 <h2>Potencjometr</h2>
-<p>Potencjometr pozwala regulować napięcie poprzez zmianę oporu.</p>
-<a href="#top" class="powrot">⬅ Powrót do listy</a>
+<p>Pozwala regulować napięcie.</p>
+<div class="powrot" onclick="powrot()">⬅ Powrót</div>
 </div>
 
-<div class="opis" id="enk">
+<div id="enk" class="opis">
 <h2>Enkoder inkrementalny</h2>
-<p>Enkoder zamienia ruch obrotowy na impulsy elektryczne.</p>
-<a href="#top" class="powrot">⬅ Powrót do listy</a>
+<p>Zamienia ruch na impulsy elektryczne.</p>
+<div class="powrot" onclick="powrot()">⬅ Powrót</div>
 </div>
 
-<div class="opis" id="ultra">
+<div id="ultra" class="opis">
 <h2>Czujnik ultradźwiękowy</h2>
-<p>Służy do pomiaru odległości za pomocą fal dźwiękowych.</p>
-<a href="#top" class="powrot">⬅ Powrót do listy</a>
+<p>Mierzy odległość falami dźwiękowymi.</p>
+<div class="powrot" onclick="powrot()">⬅ Powrót</div>
 </div>
 
-<div class="opis" id="kont">
+<div id="kont" class="opis">
 <h2>Kontaktron</h2>
-<p>Kontaktron reaguje na pole magnetyczne i działa jak przełącznik.</p>
-<a href="#top" class="powrot">⬅ Powrót do listy</a>
+<p>Reaguje na pole magnetyczne.</p>
+<div class="powrot" onclick="powrot()">⬅ Powrót</div>
 </div>
 
-<div class="opis" id="lcd">
+<div id="lcd" class="opis">
 <h2>Wyświetlacz LCD</h2>
-<p>Wyświetlacz LCD pokazuje informacje w postaci znaków i symboli.</p>
-<a href="#top" class="powrot">⬅ Powrót do listy</a>
+<p>Wyświetla tekst i symbole.</p>
+<div class="powrot" onclick="powrot()">⬅ Powrót</div>
 </div>
 
 </body>
