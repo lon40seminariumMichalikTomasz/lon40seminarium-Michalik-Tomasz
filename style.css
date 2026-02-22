@@ -69,7 +69,7 @@ p {
     font-weight: bold;
     margin-top: 12px;
     color: #9fe870;
-    /* ===== GÓRNY PASEK ===== */
+/* ===== GÓRNY PASEK ===== */
 .topbar {
     background: #2b2d31;
     padding: 15px 40px;
@@ -91,3 +91,4 @@ p {
     background: #4752c4;
 }
 }
+
