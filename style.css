@@ -1,11 +1,13 @@
 body {
     font-family: Arial, sans-serif;
-    background: #cfc3a5;
+    background: #1e1f23;
+    color: #e4e4e4;
     text-align: center;
+    margin: 0;
 }
 
 h1 {
-    color: darkred;
+    color: #ffffff;
     margin: 30px 0;
 }
 
@@ -17,26 +19,54 @@ h1 {
 }
 
 .card {
-    background: #d7cc7a;
+    background: #2b2d31;
     padding: 25px;
-    border-radius: 15px;
-    width: 230px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    border-radius: 14px;
+    width: 240px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h2 {
+    color: #ffffff;
 }
 
 .card input {
     width: 100%;
-    padding: 8px;
+    padding: 10px;
     margin: 8px 0;
+    border-radius: 6px;
+    border: none;
+    background: #3a3d42;
+    color: white;
+}
+
+.card input::placeholder {
+    color: #b5b5b5;
 }
 
 button {
-    padding: 8px 18px;
+    padding: 10px 20px;
     margin-top: 10px;
     cursor: pointer;
+    border: none;
+    border-radius: 6px;
+    background: #5865f2;
+    color: white;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #4752c4;
 }
 
 p {
     font-weight: bold;
-    margin-top: 10px;
+    margin-top: 12px;
+    color: #9fe870;
 }
